@@ -3,8 +3,9 @@ const path = require('path');
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 840,
+        height: 620,
+        icon: path.join(__dirname, 'favicon.ico'),
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -13,7 +14,6 @@ function createWindow() {
 
     mainWindow.loadFile(path.join(__dirname, 'building', 'index.html'));
 
-    mainWindow.webContents.openDevTools(); // Open DevTools for debugging
 }
 
 app.on('ready', createWindow);
